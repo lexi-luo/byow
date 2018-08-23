@@ -25,24 +25,14 @@ router.get('/', (req, res) => {
 })
 
 
-// router.get('/restaurant/:id', (req, res) => {
-//   let restaurantID = req.params.id
-//   db('byow')
-//   .where('byow.id', '=', restaurantID)
-//   .then(data => {
-//     restaurantProfile = data[0]
-//     console.log(data[0])
-//     res.render('view', data[0])
-//   })
-// })
+router.get('/category', (req, res) => {
+  db.getRestaurantByType()
+  .then(data => {
+    restaurantProfile = data
+    console.log(data)
+    res.render('view', {data: data})
+  })
+})
 
-// router.get('/category', (req, res) => {
-//   db('byow')
-//   .where('byow.category', '=', 'Thai')
-//   .then(data => {
-//       console.log(data)
-//       res.render('view', {data: data})
-//   })
-// })
 
 module.exports = router
