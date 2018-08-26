@@ -3,24 +3,48 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getUser,
-  getUsers,
-  getRestaurantByType
+  getRestaurants,
+  getRestaurant,
+  getRestaurantByType,
+  getRestaurantByLocation,
+  getRestaurantByPrice
 }
 
-function getUsers (testConn) {
-  const conn = testConn || connection
-  return conn('byow').select()
-}
-
-function getUser (id, testConn) {
-  const conn = testConn || connection
-  return conn('byow').where('id', id).first()
-}
-
-function getRestaurantByType(type, testConn) {
+function getRestaurants (testConn) {
   const conn = testConn || connection
   return conn('byow')
-  .where('byow.category', '=', 'Thai')
+}
 
+function getRestaurant (id, testConn) {
+  const conn = testConn || connection
+  return conn('byow').first()
+  .where('id', id)
+}
+
+// function getRestaurantByThai(type, testConn) {
+//   const conn = testConn || connection
+//   return conn('byow')
+//   .where('byow.category', '=', 'Thai')
+// }
+
+function getRestaurantByLocation(location, testConn) {
+  const conn = testConn || connection
+  return conn('byow')
+  .where('byow.location', '=', upperCase(location))
+}
+
+function getRestaurantByType(category, testConn) {
+  const conn = testConn || connection
+  return conn('byow')
+  .where('byow.category', '=', upperCase(category))
+}
+
+function getRestaurantByPrice(price, testConn) {
+  const conn = testConn || connection
+  return conn('byow')
+  .where('byow.price', '=', upperCase(price))
+}
+
+function upperCase(string) {
+  return string.charAt(0).toUpperCase()+string.slice(1);
 }
