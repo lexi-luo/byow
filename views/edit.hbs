@@ -1,27 +1,33 @@
 
 <div class="container">
 
+  <form method="POST" action="/edit/:{{restaurant}}"></form>
+
   <img class="img-circle" src="{{image}}" alt="{{restaurant}}">
   <label for="name" class="form-item">
-    Restaurant:
+    Restaurant: 
     <input type="text" name="restaurant" value="{{restaurant}}">
   </label>
   
-  <label for="breed" class="form-item">
-    Breed:
-    <input type="text" name="breed" value="{{breed}}">
+  <label for="category" class="form-item">
+    Category:
+    <input type="text" name="category" value="{{category}}">
   </label>
   
-  <label for="owner" class="form-item">
-    Owner:
-    <input type="text" name="owner" value="{{owner}}">
+  <label for="location" class="form-item">
+    Location:
+    <input type="text" name="location" value="{{location}}">
   </label>
   
-  <label for="image" class="form-item">
-    Image:
-    <input type="text" name="image" value="{{image}}">
+  <label for="price" class="form-item">
+    Price:
+    <input type="text" name="price" value="{{price}}">
   </label>
 
+ <label for="corkage" class="form-item">
+    Corkage:
+    <input type="text" name="corkage" value="{{corkage}}">
+  </label>
  {{!-- <input type="hidden" name="image" value="{{image}}"> --}}
   
   <input type="submit" name="" value="Submit">

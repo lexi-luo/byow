@@ -7,7 +7,8 @@ module.exports = {
   getRestaurant,
   getRestaurantByType,
   getRestaurantByLocation,
-  getRestaurantByPrice
+  getRestaurantByPrice,
+  getRestaurantByRestaurant
 }
 
 function getRestaurants (testConn) {
@@ -43,6 +44,13 @@ function getRestaurantByPrice(price, testConn) {
   const conn = testConn || connection
   return conn('byow')
   .where('byow.price', '=', upperCase(price))
+}
+
+
+function getRestaurantByRestaurant(restaurant, testConn) {
+  const conn = testConn || connection
+  return conn('byow')
+  .where('byow.restaurant', '=', upperCase(restaurant))
 }
 
 function upperCase(string) {

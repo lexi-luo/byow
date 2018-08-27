@@ -22,6 +22,11 @@ router.get('/', (req, res) => {
   })         
 })
 
+router.get('/create', (req, res) => {
+  res.render('create')
+})
+
+
 router.get('/:id', (req, res) => {
   // db.getRestaurant()
   db.getRestaurant(req.params.id)
@@ -31,15 +36,15 @@ router.get('/:id', (req, res) => {
   })        
 })
 
+router.get('/restaurant/:restaurant', (req, res) => {
+  console.log(req.params.restaurant)
+  db.getRestaurantByRestaurant(req.params.restaurant)
+  .then(restaurant => {
+   console.log(restaurant)
+    res.render('view', {data: restaurant})
+  })
+})
 
-// router.get('/category/thai', (_req, res) => {
-//   db.getRestaurantByThai()
-//   .then(data => {
-//     restaurantProfile = data
-//     console.log(data)
-//     res.render('view', {data: data})
-//   })
-// })
 
 router.get('/category/:category', (req, res) => {
   //console.log(req.params.category)
@@ -68,6 +73,7 @@ router.get('/price/:price', (req, res) => {
     res.render('view', {data: price})
   })
 })
+
 
 
 module.exports = router
