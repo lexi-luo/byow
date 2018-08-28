@@ -2,8 +2,9 @@
 
 
 body {
-  background-color: #82CAFA;
-  font-family: 'Aclonica';
+  background-color: rgb(173, 213, 240);
+  font-family: 'Advent Pro';
+  font-size: 22px;
 }
 
 .container {

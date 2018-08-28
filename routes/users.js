@@ -22,6 +22,27 @@ router.get('/', (req, res) => {
   })         
 })
 
+router.get('/category', (req, res) => {
+  db.getCategory(req.params.category)
+  .then(category => {
+    console.log({category: category})
+    res.render('dropdowns', {category: category})
+  })
+})
+
+router.post('/category', (req, res) => {
+db.category.find()
+  res.redirect('/category/' + req.body.category)
+})
+
+router.get('/dollars', (req, res) => {
+res.render('checkbox')
+})
+
+router.get('/review', (req, res) => {
+  res.render('review')
+  })
+
 router.get('/create', (req, res) => {
   res.render('create')
 })

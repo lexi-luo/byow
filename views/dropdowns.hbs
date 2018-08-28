@@ -1,0 +1,23 @@
+Categories
+<form action="/category/" method="POST">
+<select>
+  {{#each category}}
+ <option value={{category}}>{{this}}</option>
+ {{/each}}
+{{!--  
+  <option value="Asian">Asian</option>
+  <option value="Chinese">Chinese</option>
+  <option value="European">European</option>
+  <option value="Indian">Indian</option>
+  <option value="Italian">Italian</option>
+  <option value="Japanese">Japanese</option>
+  <option value="Korean">Korean</option>
+  <option value="Malaysian">Malaysian</option>
+  <option value="Mexican">Mexican</option>
+  <option value="Mongolian">Mongolian</option>
+  <option value="Thai">Thai</option>
+  <option value="Turkish">Turkish</option>
+  <option value="Vietnamese">Vietnamese</option> --}}
+</select>
+      <input id="submit" type="submit" value="find me food" />
+      </form>
