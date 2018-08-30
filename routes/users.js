@@ -47,6 +47,15 @@ router.get('/create', (req, res) => {
   res.render('create')
 })
 
+// router.post('/create', (req, res) => {
+//   let restaurant = req.body.restaurant
+// let category = req.body.category
+// let location = req.body.location
+// let price = req.body.price
+// let phone = req.body.phone
+// let corkage = req.body.corkage
+//   res.redirect('/restaurant/' + id)
+// })
 
 router.get('/:id', (req, res) => {
   // db.getRestaurant()

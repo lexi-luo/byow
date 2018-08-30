@@ -52,6 +52,22 @@ function getRestaurantByPrice(price, testConn) {
   .where('byow.price', '=', upperCase(price))
 }
 
+// function createRestaurant(restaurant, category, location, price, phone, corkage, testConn) {
+// const conn = testConn || connection
+// return conn ('byow').insert({
+//    restaurant = restaurant,
+//    category = category,
+//    location = location,
+//    price = price,
+//    phone = phone,
+//    corkage = corkage
+// })
+// .push(data => {
+
+// })
+
+// }
+
 
 function getRestaurantByRestaurant(restaurant, testConn) {
   const conn = testConn || connection

@@ -2,7 +2,10 @@ Categories
 <form action="/category/" method="POST">
 <select>
   {{#each category}}
- <option value={{category}}>{{this}}</option>
+    let username = req.body.username
+    let age = req.body.age
+    let bio = req.body.bio
+    let profile_pic = req.body.profile_pic
  {{/each}}
 {{!--  
   <option value="Asian">Asian</option>

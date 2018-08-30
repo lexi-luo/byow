@@ -61,7 +61,7 @@ body {
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
-  right: 0;
+  left: 0;
   background-color: rgba(150, 146, 146, 0.972); /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   /* padding: 20px; */
