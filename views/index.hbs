@@ -1,14 +1,12 @@
- <div class="col-6">
+
    {{!-- <a class="nav" href="/">Home</a> --}}
+   <div class="listings">
 {{#each byow}}
 
-  
-  <br>
-  Name: {{restaurant}}
-  <br>
+  <h1>{{restaurant}}</h1>
   Category: {{category}}
   <br>
-  Corkage: {{corkage}}
+  Corkage: ${{corkage}}
   <br>
   Location: {{location}}
   <br>
@@ -16,7 +14,7 @@
   <br>
   Phone: {{phone}}
   <br>
+  <br>
 {{/each}}
-
 
 </div>

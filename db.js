@@ -9,7 +9,9 @@ module.exports = {
   getRestaurantByLocation,
   getRestaurantByPrice,
   getRestaurantByRestaurant,
-  getCategory
+  getCategory,
+  openNav,
+  closeNav
 }
 
 function getRestaurants (testConn) {
@@ -77,4 +79,17 @@ function getRestaurantByRestaurant(restaurant, testConn) {
 
 function upperCase(string) {
   return string.charAt(0).toUpperCase()+string.slice(1);
+}
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById(sidenav).style.width = "250px";
+  document.getElementById(main).style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  console.log('yuiuei')
+  document.getElementById("sidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
 }

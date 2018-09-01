@@ -22,6 +22,14 @@ router.get('/', (req, res) => {
   })         
 })
 
+router.get('/thumbnails', (req, res) => {
+  db.getRestaurants()
+  .then(byow => {
+    console.log(byow)
+    res.render('thumbnails', {byow: byow})
+  })         
+})
+
 router.get('/category', (req, res) => {
   db.getCategory(req.params.category)
   .then(category => {
