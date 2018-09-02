@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
   db.getRestaurants()
   .then(byow => {
     console.log(byow)
-    res.render('index', {byow: byow})
+    res.render('home', {byow: byow})
   })         
 })
 
@@ -39,7 +39,8 @@ router.get('/category', (req, res) => {
 })
 
 router.post('/category', (req, res) => {
-db.category.find()
+  console.log(req.body)
+  db.getCategory(req.params.category)
   res.redirect('/category/' + req.body.category)
 })
 
@@ -55,15 +56,14 @@ router.get('/create', (req, res) => {
   res.render('create')
 })
 
-// router.post('/create', (req, res) => {
-//   let restaurant = req.body.restaurant
-// let category = req.body.category
-// let location = req.body.location
-// let price = req.body.price
-// let phone = req.body.phone
-// let corkage = req.body.corkage
-//   res.redirect('/restaurant/' + id)
-// })
+router.post('/create', (req, res) => {
+  console.log(req.body)
+
+  db.createRestaurant(req.body)
+  .then(id => {
+    res.redirect('/restaurant/' + req.body.restaurant)
+  })    
+})
 
 router.get('/:id', (req, res) => {
   // db.getRestaurant()

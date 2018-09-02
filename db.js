@@ -10,8 +10,7 @@ module.exports = {
   getRestaurantByPrice,
   getRestaurantByRestaurant,
   getCategory,
-  openNav,
-  closeNav
+  createRestaurant
 }
 
 function getRestaurants (testConn) {
@@ -54,22 +53,12 @@ function getRestaurantByPrice(price, testConn) {
   .where('byow.price', '=', upperCase(price))
 }
 
-// function createRestaurant(restaurant, category, location, price, phone, corkage, testConn) {
-// const conn = testConn || connection
-// return conn ('byow').insert({
-//    restaurant = restaurant,
-//    category = category,
-//    location = location,
-//    price = price,
-//    phone = phone,
-//    corkage = corkage
-// })
-// .push(data => {
-
-// })
-
-// }
-
+function createRestaurant(data, testConn) {
+  const conn = testConn || connection
+  data.restaurant = upperCase(data.restaurant)
+  console.log(data)
+  return conn('byow').insert(data)
+}
 
 function getRestaurantByRestaurant(restaurant, testConn) {
   const conn = testConn || connection
@@ -79,17 +68,4 @@ function getRestaurantByRestaurant(restaurant, testConn) {
 
 function upperCase(string) {
   return string.charAt(0).toUpperCase()+string.slice(1);
-}
-
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById(sidenav).style.width = "250px";
-  document.getElementById(main).style.marginLeft = "250px";
-}
-
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  console.log('yuiuei')
-  document.getElementById("sidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
 }
