@@ -4,7 +4,9 @@ function openNav() {
 }
 
 function closeNav() {
-    console.log('yuiuei')
+    console.log('ydsfkjslf')
     document.getElementById("navv").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
+
+

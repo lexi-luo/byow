@@ -1,18 +1,15 @@
-
-   {{!-- <a class="nav" href="/">Home</a> --}}
-   <div class="listings">
-{{#each byow}}
+ {{!-- <a class="nav" href="/">Home</a> --}}
+<div class="listings">
+  {{#each byow}}
 
   <h1>{{restaurant}}</h1>
   Category: {{category}}
+  <br> Location: {{location}}
+  <br> Range: {{price}}
+  <br> Phone: <a href="tel:{{phone}}">{{phone}}</a>
   <br>
-  Location: {{location}}
-  <br>
-  Range: {{price}}
-  <br>
-  Phone: <a href="tel:{{phone}}">{{phone}}</a>
-  <br>
-  <br>
-{{/each}}
+  <br> {{/each}} {{!-- <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyApkbdj2rRQyrsyPJsS4H1rRnxYNSqa-tA
+    &q={{restaurant}}" allowfullscreen>
+  </iframe> --}}
 
 </div>

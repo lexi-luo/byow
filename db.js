@@ -10,18 +10,22 @@ module.exports = {
   getRestaurantByPrice,
   getRestaurantByRestaurant,
   getCategory,
-  createRestaurant
+  createRestaurant,
+  getRandomRestaurant
 }
+// module.imports = {
+//   randomRestaurant
+// }
 
-function getRestaurants (testConn) {
+function getRestaurants(testConn) {
   const conn = testConn || connection
   return conn('byow')
 }
 
-function getRestaurant (id, testConn) {
+function getRestaurant(id, testConn) {
   const conn = testConn || connection
   return conn('byow').first()
-  .where('id', id)
+    .where('id', id)
 }
 
 // function getRestaurantByThai(type, testConn) {
@@ -33,13 +37,13 @@ function getRestaurant (id, testConn) {
 function getRestaurantByLocation(location, testConn) {
   const conn = testConn || connection
   return conn('byow')
-  .where('byow.location', '=', upperCase(location))
+    .where('byow.location', '=', upperCase(location))
 }
 
 function getRestaurantByType(category, testConn) {
   const conn = testConn || connection
   return conn('byow')
-  .where('byow.category', '=', upperCase(category))
+    .where('byow.category', '=', upperCase(category))
 }
 
 function getCategory(testConn) {
@@ -49,8 +53,9 @@ function getCategory(testConn) {
 
 function getRestaurantByPrice(price, testConn) {
   const conn = testConn || connection
+  console.log('and here?')
   return conn('byow')
-  .where('byow.price', '=', upperCase(price))
+    .where('byow.price', '=', price)
 }
 
 function createRestaurant(data, testConn) {
@@ -63,9 +68,17 @@ function createRestaurant(data, testConn) {
 function getRestaurantByRestaurant(restaurant, testConn) {
   const conn = testConn || connection
   return conn('byow')
-  .where('byow.restaurant', '=', upperCase(restaurant))
+    .where('byow.restaurant', '=', upperCase(restaurant))
 }
 
 function upperCase(string) {
-  return string.charAt(0).toUpperCase()+string.slice(1);
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function getRandomRestaurant(testConn) {
+  const conn = testConn || connection
+  console.log("ra di ra")
+  let id = Math.round(Math.random() * 40);
+  return conn('byow').first()
+    .where('id', id)
 }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Bevvies</title>
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+      height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <script>
+
+    function initMap() {
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: { lat: -41.296848, lng: 174.773906 }
+      });
+
+      // Create an array of alphabetical characters used to label the markers.
+      var labels = ['Liquor Centre', 'Liquorland', 'Glengarry', 'Liquor King', 'Thirsty Liquor', 'Liquor World', 'Regional Wines', 'Capital Liquor'];
+
+      // Add some markers to the map.
+      // Note: The code uses the JavaScript Array.prototype.map() method to
+      // create an array of markers based on a given "locations" array.
+      // The map() method here has nothing to do with the Google Maps API.
+      var markers = locations.map(function (location, i) {
+        return new google.maps.Marker({
+          position: location,
+          label: labels[i % labels.length]
+        });
+      });
+
+      // Add a marker clusterer to manage the markers.
+      var markerCluster = new MarkerClusterer(map, markers,
+        { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+    }
+    var locations = [
+      { lat: -41.29104, lng: 174.77462 },
+      { lat: -41.29525, lng: 174.77247 },
+      { lat: -41.29393, lng: 174.78225 },
+      { lat: -41.29565, lng: 174.78352 },
+      { lat: -41.29754, lng: 174.7813 },
+      { lat: -41.29349, lng: 174.7758 },
+      { lat: -41.29981, lng: 174.78198 },
+      { lat: -41.29156, lng: 174.77754 }
+    ]
+
+  </script>
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIkhUwpAR7LsCs4CnRfANa9TPIdgo3bYU&callback=initMap">
+  </script>
+</body>
+
+</html>

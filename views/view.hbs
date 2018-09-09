@@ -1,33 +1,12 @@
 <div class="restaurant">
- {{#each data}}
- {{id}}
-<br>
+    {{#each data}}
 
-this is your view template, get rid of id sometime soon, add phone stuff to test dial
+    <br> this is your view template, add phone stuff to test dial
     <br>
-   <h2>{{restaurant}}</h2>
-  <br>
-  Category: {{category}}
-  <br>
-  Corkage: ${{corkage}}
-  <br>
-  Location: {{location}}
-  <br>
-  Price Range: {{price}}
-  <br>
-  Phone: <a href="tel:{{phone}}">{{phone}}</a>
-  <br>
-  {{/each}}
-</div>
-
-
-
-<div class="sidenav">
-    <div class="sidebar-text">
-        <h2>{{restaurant}}</h2>
-        <h3>{{name}}</h3>
-        <p>{{description}}</p>
-        <p>${{price}}</p>
-        <p>{{rating}}</p>
-    </div>
+    <h2> <a href="/restaurant/{{restaurant}}">{{restaurant}}</a></h2>
+    <br> Category: {{category}}
+    <br> Location: {{location}}
+    <br> Price Range: {{price}}
+    <br> Phone: <a href="tel:{{phone}}">{{phone}}</a>
+    <br> {{/each}}
 </div>
