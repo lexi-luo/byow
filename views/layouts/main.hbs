@@ -6,25 +6,27 @@
   <title>BYO Wellington</title>
   <link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/main.css"> {{!--
-  <script src='./db.js'> </script> --}}
-
+  <link rel="stylesheet" href="/main.css"> 
+<script src='/byow.js'> </script>
 
   <body>
     <div class="restaurant">
       <h1 class="title">BYO</h1>
-      <a class="nav" href="/">Home</a>
+      <a class="nav" href="/">Home</a><br>
 
-      <div id="main">
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu <p> figure out your css things... can
-            you be bothered? bootstrap? -flex</p></span>
+      <div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu </span><br>
       </div>
+      sort out your css and whatnot
       <div class="sidenav" id="navv">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/all">Restaurants</a>
         <a href="/category">Category</a>
-        <a href="#">Location find another way to return data with a form submission</a>
-        <a href="/dollars">Price</a>
+        <a href="#">Location - find another way to return data with a form submission</a>
+        <a href="/dollars">Dollars</a>
+        <a href="/review">Review</a>
+        <a href="/create">Create</a>
+        <a href="/map.html">Map - add location stuff</a>
       </div>
 </head>
 
@@ -34,25 +36,30 @@
     {{{body}}}
   </div>
 </div>
-<iframe src="https://www.google.com/maps/d/embed?mid=1jiSye8MWgMytAFN7arJb0jhji1c2mSub" width="640" height="480"></iframe>
 
 
-<br> your default thing everything goes here, don't forget to look at google map apis... proximity to liquor - so key, figure
-out why byow.js doesn't work 3 clicks deep
+<div> <h2>Vino Vino Vino</h2> 
+<center><span style="font-size:20px;cursor:pointer" onclick="boozeMap()">show/hide</span><br></center>
 </div>
-<script>
+<div class="" id="boozemap">
+<iframe src="https://www.google.com/maps/d/embed?mid=1jiSye8MWgMytAFN7arJb0jhji1c2mSub" width="640" height="480"></iframe>
+</div>
+
+
+<br> don't forget to look at google map apis... proximity to liquor - so key, figure
+out why byow.js doesn't work 3 clicks deep ../../././.?? find that loose console log where's that flipping undefined coming from
+</div>
+
+{{!-- <script>
   function openNav() {
     document.getElementById('navv').style.width = "20%";
-    document.getElementById('main').style.marginLeft = "20%";
   }
 
   function closeNav() {
-    console.log('ydsfkjslf')
     document.getElementById("navv").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
   }
 
-</script>
+</script> --}}
 </body>
 
 </html>

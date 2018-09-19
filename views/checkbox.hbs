@@ -1,14 +1,39 @@
-<h1>
-  dollars</h1>
 
-<form method="POST" action="/dollars/">
+<h1>dollars</h1>
 
+<form method="POST" action="/search" name="dollars">
 
-  <label>Cheap and Cheerful<input id='Cheap and Cheerful' type='radio' name='price' value="Cheap and Cheerful"></label>
-  <label>In The Middle<input id='In The Middle' type='radio' name='price' value="In The Middle"></label>
-  <label>Spendy<input id='Spendy' type='radio' name='price' value="Spendy"></label>
-
+{{!-- group radio box things together --}}
+  
+  <input type='radio' name='price' value="Cheap and Cheerful" id="price1">
+  <label for="price1">Cheap and Cheerful</label>
   <br>
-
-  <input id='submit' type="submit" value="nom nom nom" />
+  
+  <input type='radio' name='price' value="In The Middle" id="price2">
+  <label for="price2">In The Middle</label>
+  <br>
+  
+  <input type='radio' name='price' value="Spendy" id="price3">
+  <label for="price3">Spendy</label>
+  <br>
+  
+<br>
+<input type="submit" />
 </form>
+
+{{!-- 
+<script>
+var rad = document.dollars.price;
+    var prev = null;
+    for(var i = 0; i < rad.length; i++) {
+        rad[i].onclick = function() {
+            (prev)? console.log(prev.value):null;
+            if(this !== prev) {
+                prev = this;
+            }
+            console.log(this.value);
+            return this.value;
+        };
+    }
+
+    </script> --}}

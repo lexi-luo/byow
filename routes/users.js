@@ -14,6 +14,11 @@ const router = express.Router()
 //     })
 // })
 
+router.get('/map', (req, res) => {
+ 
+      res.render('/map.html')
+})
+
 router.get('/', (req, res) => {
   db.getRestaurants()
     .then(byow => {
@@ -116,9 +121,6 @@ router.get('/:id', (req, res) => {
       res.render('template', id)
     })
 })
-
-
-
 
 
 router.get('/location/:location', (req, res) => {
