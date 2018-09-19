@@ -1,0 +1,28 @@
+<form method="POST" action="/auth/register" name="login">
+  <h1>Cool Kids Club</h1>
+  gotta chuck an admin thing for this<br />
+  <label>and you are?<input id="username" type="text" name="username" /></label><br />
+  <label>secret phrase<input id="hash" type="text" name="hash" /></label><br />
+  <label>secret phrase x2<input id="confirm_hash" value="" type="text" name="hash" /></label><br />
+
+
+
+  <div class="createUser"><input type="submit" value="Submit" /></div>
+</form>
+
+<script>
+  var hash = document.getElementById("hash");
+  confirm_hash = document.getElementById("confirm_hash");
+
+  function validateHash() {
+    if (hash.value != confirm_hash.value) {
+      confirm_hash.setCustomValidity("Your Secret Thing Doesn't Match");
+    } else {
+      confirm_hash.setCustomValidity('WooHoo');
+    }
+  }
+
+  hash.onchange = validateHash;
+  confirm_hash.onkeyup = validateHash;
+
+</script>

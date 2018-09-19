@@ -18,10 +18,13 @@
   "homepage": "https://github.com/dev-academy-challenges/boilerplate-knex#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "jsonwebtoken": "^8.3.0",
     "knex": "^0.15.2",
     "nodemon": "^1.18.3",
+    "sodium": "^2.0.3",
     "sqlite3": "^4.0.2"
   },
   "devDependencies": {

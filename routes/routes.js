@@ -15,14 +15,12 @@ const router = express.Router()
 // })
 
 router.get('/map', (req, res) => {
- 
-      res.render('/map.html')
+  res.render('/map.html')
 })
 
 router.get('/', (req, res) => {
   db.getRestaurants()
     .then(byow => {
-      console.log(byow)
       res.render('home', { byow: byow })
     })
 })
@@ -30,13 +28,24 @@ router.get('/', (req, res) => {
 router.get('/all', (req, res) => {
   db.getRestaurants()
     .then(byow => {
-      console.log(byow)
       res.render('index', { byow: byow })
     })
 })
 
+router.get('/login', (req, res) => {
+  res.render('login')
+})
+
+router.get('/register', (req, res) => {
+  res.render('register')
+})
+
+router.post('/register', (req, res) => {
+  console.log(req.body)
+  res.render('register')
+})
+
 router.post('/random', (req, res) => {
-  // db.getRestaurant()
   db.getRandomRestaurant()
     .then(id => {
       console.log(id)
@@ -105,8 +114,7 @@ router.get('/create', (req, res) => {
 })
 
 router.post('/create', (req, res) => {
-  console.log(req.body)
-
+  console.log()
   db.createRestaurant(req.body)
     .then(id => {
       res.redirect('/restaurant/' + req.body.restaurant)
@@ -121,7 +129,6 @@ router.get('/:id', (req, res) => {
       res.render('template', id)
     })
 })
-
 
 router.get('/location/:location', (req, res) => {
   console.log(req.params.location)

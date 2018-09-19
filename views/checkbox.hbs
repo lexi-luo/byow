@@ -1,34 +1,33 @@
-
 <h1>dollars</h1>
 
-<form method="POST" action="/search" name="dollars">
+<form method="POST" action="/dollars" name="dollars">
 
-{{!-- group radio box things together --}}
-  
-  <input type='radio' name='price' value="Cheap and Cheerful" id="price1">
-  <label for="price1">Cheap and Cheerful</label>
-  <br>
-  
-  <input type='radio' name='price' value="In The Middle" id="price2">
-  <label for="price2">In The Middle</label>
-  <br>
-  
-  <input type='radio' name='price' value="Spendy" id="price3">
-  <label for="price3">Spendy</label>
-  <br>
-  
-<br>
-<input type="submit" />
+    {{!-- group radio box things together --}}
+
+    <input type='radio' name='price' value="Cheap and Cheerful" id="price1">
+    <label for="price1">Cheap and Cheerful</label>
+    <br />
+
+    <input type='radio' name='price' value="In The Middle" id="price2">
+    <label for="price2">In The Middle</label>
+    <br />
+
+    <input type='radio' name='price' value="Spendy" id="price3">
+    <label for="price3">Spendy</label>
+    <br />
+
+    <br />
+    <input type="submit" />
 </form>
 
-{{!-- 
+{{!--
 <script>
-var rad = document.dollars.price;
+    var rad = document.dollars.price;
     var prev = null;
-    for(var i = 0; i < rad.length; i++) {
-        rad[i].onclick = function() {
-            (prev)? console.log(prev.value):null;
-            if(this !== prev) {
+    for (var i = 0; i < rad.length; i++) {
+        rad[i].onclick = function () {
+            (prev) ? console.log(prev.value) : null;
+            if (this !== prev) {
                 prev = this;
             }
             console.log(this.value);
@@ -36,4 +35,4 @@ var rad = document.dollars.price;
         };
     }
 
-    </script> --}}
+</script> --}}
